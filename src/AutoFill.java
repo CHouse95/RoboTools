@@ -5,25 +5,8 @@ import java.awt.event.KeyEvent;
 
 public class AutoFill {
 	
-	public static void robo(int t) throws AWTException {
-		Robot robot = new Robot();
-		robot.delay(t);
-		return;
-	}
-	
-	public static void Spam(String message) throws AWTException {
-		int i = 0;
-		Robot robot = new Robot();
-		while(message.length() > i){
-			TypeChar(message.charAt(i));
-			i++;
-		}
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.delay(1);
-		return;
-	}
-	
-	public static void FillTextBoxes(String username, String password) throws AWTException {
+	//Fills text boxes using a tab to move from user name text box to the password text box
+	public static void FillTextBoxes(int delay, String username, String password) throws AWTException {
 		int i = 0;
 		Robot robot = new Robot();
 		while(username.length() > i){
@@ -38,20 +21,23 @@ public class AutoFill {
 			i++;
 		}
 		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.delay(3000);
+		robot.delay(delay);
 		return;
 	}
 	
-	public static void TypeString(String S) throws AWTException{
+	//Types out the passed string
+	public static void TypeString(int delay, String S) throws AWTException{
 		int i = 0;
 		Robot robot = new Robot();
-		robot.delay(1000);
 		while(S.length() > i){
 			TypeChar(S.charAt(i));
 			i++;
 		}
+		robot.delay(delay);
+		return;
 	}
 	
+	//Types out the individual characters 
 	public static void TypeChar(char c) throws AWTException{
 		Robot robot = new Robot();
 		if (c == " ".charAt(0)){
@@ -521,4 +507,5 @@ public class AutoFill {
 			robot.keyRelease(KeyEvent.VK_Z);
 		}
 	}
+
 }
