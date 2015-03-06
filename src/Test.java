@@ -13,8 +13,10 @@ public class Test {
 			System.out.println(un);
 			//un = StringGenerator.GetNewString_all(un);
 			//un = StringGenerator.GetNewString_some(un);
-			un = StringGenerator.GetNewString_none(un);
+			//nonworking
+			//un = StringGenerator.GetNewString_none(un);
 			//un = StringGenerator.GetNewString_lowernum(un);
+			//nonworking
 			//un = StringGenerator.GetNewString_lower(un);
 			
 			i++;

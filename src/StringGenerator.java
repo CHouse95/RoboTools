@@ -59,7 +59,7 @@ public class StringGenerator {
 		return newPassword.toString();
 		}
 	
-	//Gets new password using no special characters
+	//Gets new password using only lower case letters and numbers
 	public static String GetNewString_lowernum(String oldPassword) {
 		int j = 0, k = 0;
 		String zero = "0";
@@ -72,13 +72,13 @@ public class StringGenerator {
 			}
 			StringBuilder newPassword = new StringBuilder(oldPassword);
 			while(i == 0){
-				newPassword.setCharAt(j, GetNextChar_lower(newPassword.charAt(j)));
+				newPassword.setCharAt(j, GetNextChar_lowernum(newPassword.charAt(j)));
 				j++;
 			}
 		return newPassword.toString();
 	}
 		
-	//Gets new password using lower case letter
+	//Gets new password using only lower case letter
 	public static String GetNewString_lower(String oldPassword) {
 		int j = 0, k = 0;
 		String a = "a";
@@ -91,7 +91,7 @@ public class StringGenerator {
 			}
 			StringBuilder newPassword = new StringBuilder(oldPassword);
 			while(i == 0){
-				newPassword.setCharAt(j, GetNextChar_none(newPassword.charAt(j)));
+				newPassword.setCharAt(j, GetNextChar_lower(newPassword.charAt(j)));
 				j++;
 			}
 		return newPassword.toString();
@@ -1154,10 +1154,6 @@ public class StringGenerator {
 	//Gets new char using only lower case letters
 	public static char GetNextChar_lower(char oldChar){
 		char newChar = 0;
-		if(oldChar == "z".charAt(0)){
-			newChar = "a".charAt(0);
-			i = 1;
-		}
 		if(oldChar == "a".charAt(0)){
 			newChar = "b".charAt(0);
 			i = 1;
